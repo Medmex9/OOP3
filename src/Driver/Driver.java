@@ -1,17 +1,29 @@
 package Driver;
 
-public class Driver {
+import Transport.Auto;
+
+public class Driver < A extends Auto> {
     String fullName;
     boolean driversLicense;
     int experience;
-    String rank;
+    A vehicle;
 
 
-    public Driver(String fullName, boolean driversLicense, int experience, String rank) {
+
+    public Driver(String fullName, boolean driversLicense, int experience, A vehicle) {
         this.fullName = fullName;
         this.driversLicense = driversLicense;
         this.experience = experience;
-        this.rank = rank;
+        this.vehicle = vehicle;
+
+    }
+
+    public A getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(A vehicle) {
+        this.vehicle = vehicle;
     }
 
     public String getFullName() {
@@ -19,7 +31,13 @@ public class Driver {
     }
 
     public void setFullName(String fullName) {
-        this.fullName = fullName;
+
+        if(fullName==null||fullName.isEmpty()) {
+
+            this.fullName = "Пупкин Николай Петрович";}
+        else {
+            this.fullName = fullName;
+        }
     }
 
     public boolean isDriversLicense() {
@@ -27,7 +45,12 @@ public class Driver {
     }
 
     public void setDriversLicense(boolean driversLicense) {
-        this.driversLicense = driversLicense;
+        if (driversLicense==false) {
+            System.out.println("Водителю запрещено ехать");
+        }
+        else {
+            this.driversLicense = driversLicense;
+        }
     }
 
     public int getExperience() {
@@ -35,15 +58,11 @@ public class Driver {
     }
 
     public void setExperience(int experience) {
-        this.experience = experience;
+        if (experience<=0) {
+            this.experience = 3;
+        }
+         else {this.experience = experience;
     }
-
-    public String getRank() {
-        return rank;
-    }
-
-    public void setRank(String rank) {
-        this.rank = rank;
     }
     public void startMoving() {
         System.out.println("Начал движение " + getFullName());
@@ -56,9 +75,17 @@ public class Driver {
     public void Refuel() {
         System.out.println("Водитель " + fullName + " Заехал на заправку");
     }
+    public void StartAuto () {
+        System.out.println("Водитель " + getFullName() + "Начал движение на " + getVehicle());
+    }
 
+    @Override
     public String toString() {
-        return "Водитель" + fullName + driversLicense +
-                " со стажем" + experience;
+        return "Driver{" +
+                "fullName='" + fullName + '\'' +
+                ", driversLicense=" + driversLicense +
+                ", experience=" + experience +
+                ", vehicle=" + vehicle +
+                '}';
     }
 }
