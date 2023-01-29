@@ -1,8 +1,11 @@
 package Driver;
 
-public class DriverC extends Driver{
-    public DriverC(String fullName, boolean driversLicense, int experience, String rank) {
-        super(fullName, driversLicense, experience, rank);
+import Transport.Car;
+import Transport.Truck;
+
+public class DriverC extends Driver<Truck> {
+    public DriverC(String fullName, boolean driversLicense, int experience, Truck vehicle) {
+        super(fullName, driversLicense, experience, vehicle);
     }
 
     @Override
@@ -18,5 +21,19 @@ public class DriverC extends Driver{
     @Override
     public void Refuel() {
         super.Refuel();
+    }
+    @Override
+    public void StartAuto() {
+        super.StartAuto();
+    }
+
+    @Override
+    public String toString() {
+        return "DriverC{" +
+                "fullName='" + fullName + '\'' +
+                ", driversLicense=" + driversLicense +
+                ", experience=" + experience +
+                ", vehicle=" + vehicle +
+                '}';
     }
 }

@@ -1,34 +1,21 @@
 package Transport;
 
 import Driver.Driver;
+import Transport.Competing;
 
-public class Auto<C extends Driver> implements Competing {
+public abstract class Auto<C extends Driver> implements Competing {
 
-    public String brand;
-    public String model;
-    public int engineVolume;
-    private C driver;
+    private String brand;
+    private String model;
+    private double engineVolume;
 
-    public Auto(String brand, String model, int engineVolume, C driver) {
-
+    public Auto(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
-        this.driver = driver;
     }
 
-    public C getDriver() {
-        return driver;
-    }
-
-    public void setDriver(C driver) {
-        this.driver = driver;
-    }
-
-    public void PitStop() {
-        System.out.println("Встал на пит-стоп " + getModel() );
-
-    }
+    public abstract void PitStop();
     public void BestLapTime() {
         System.out.println("Лучшее время круга ");
     }
@@ -38,14 +25,9 @@ public class Auto<C extends Driver> implements Competing {
 
 
 
-    public void startMoving() {
-        System.out.println("Начал движение " + getBrand());
-    }
+    public abstract void startMoving();
 
-    public void stopMoving() {
-
-        System.out.println("Закончил движение" + getBrand());
-    }
+    public abstract void stopMoving();
 
 
     public String getBrand() {
@@ -53,27 +35,28 @@ public class Auto<C extends Driver> implements Competing {
     }
 
     public void setBrand(String brand) {
+
+        if(brand == null|| brand.isEmpty()) {
+            brand = "brand";
+        }
         this.brand = brand;
     }
 
-    public String getModel() {
-        if (model==null) {
-            model = "default";
-        }
+    public String getModel() { return model;}
 
-         return model;
-
+    public void setModel(String model) {if (model==null||model.isEmpty()) {
+        model = "default";
     }
-
-    public void setModel(String model) {
-        this.model = model;
     }
+    public abstract void PrintType();
 
-    public int getEngineVolume() {
+    public double getEngineVolume() {
         return engineVolume;
     }
 
-    public void setEngineVolume(int engineVolume) {
+    public void setEngineVolume(double engineVolume) {
+        if(engineVolume <=0) {
+            engineVolume = 2; }
         this.engineVolume = engineVolume;
     }
 

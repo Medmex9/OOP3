@@ -1,0 +1,3 @@
+package Transport;
+
+public enum TypeOfBody { SEDAN, HATCHBACK, COUPE, STATINOWAGON, SUV, CROSSOVER, PICKUP, VAN, MINIVAN}
