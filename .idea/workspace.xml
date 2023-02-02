@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2af8c86-b7e1-4628-b136-1c665fdae274" name="Changes" comment="Done ENUM">
-      <change afterPath="$PROJECT_DIR$/src/Driver/CheckingForExceptions.java" afterDir="false" />
+    <list default="true" id="f2af8c86-b7e1-4628-b136-1c665fdae274" name="Changes" comment="Done Exceptions">
+      <change afterPath="$PROJECT_DIR$/src/Driver/DriverLicenseCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Driver/CheckingForExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/CheckingForExceptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Driver/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Driver/DriverB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver/DriverB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Driver/DriverC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver/DriverC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Driver/DriverD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver/DriverD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Transport/Auto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Auto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transport/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transport/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transport/Truck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,7 @@
       <workItem from="1674911501032" duration="12155000" />
       <workItem from="1674968180675" duration="722000" />
       <workItem from="1674996029926" duration="8897000" />
-      <workItem from="1675352792449" duration="3564000" />
+      <workItem from="1675352792449" duration="6058000" />
     </task>
     <task id="LOCAL-00001" summary="Done">
       <created>1674476324896</created>
@@ -122,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675006604702</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Done Exceptions">
+      <created>1675356465309</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675356465309</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Done" />
     <MESSAGE value="Done ENUM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done ENUM" />
+    <MESSAGE value="Done Exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done Exceptions" />
   </component>
 </project>

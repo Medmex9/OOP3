@@ -1,18 +1,19 @@
 package Driver;
 
 import Transport.Auto;
+import Transport.CheckingForExceptions;
 
 public class Driver < A extends Auto> {
     String fullName;
     boolean driversLicense;
     int experience;
-    String category;
+    DriverLicenseCategory category;
 
     A vehicle;
 
 
 
-    public Driver(String fullName, boolean driversLicense, int experience, A vehicle, String category) {
+    public Driver(String fullName, boolean driversLicense, int experience, A vehicle, DriverLicenseCategory category) {
         this.fullName = fullName;
         this.driversLicense = driversLicense;
         this.experience = experience;
@@ -21,17 +22,22 @@ public class Driver < A extends Auto> {
 
     }
 
-    public String getCategory() {
+    public DriverLicenseCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) throws CheckingForExceptions {
-        if (category != null && !category.isEmpty()) {
-            this.category = category;
-        } else {
-            throw new CheckingForExceptions("Категория прав не указана или указана неверно");
+    public void setCategory(DriverLicenseCategory category) throws CheckingForExceptions {
+        try {
+            setCategory(category);
+        } catch (DriverLicenseCategory) {
+            if (category != null) {
+                this.category = category;
+
+            } else {
+                System.out.println("Не указан тип водительского удостоверения");
+            }
         }
-        }
+    }
 
 
 
