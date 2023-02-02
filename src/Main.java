@@ -19,11 +19,12 @@ public class Main {
         Truck truck3 = new Truck("Scania", "CVC", 8,Tonnage.N2);
         Truck truck4 = new Truck("Kamaz", "D3", 8,Tonnage.N2);
         Driver<Truck> driver1 = new Driver<Truck>("Пупкин Иван Иванович", true,
-                8, truck1);
-        Driver<Bus> driver2 = new Driver<Bus>("Ложкин Пётр Михайлович", true, 8, bus2);
-        Driver<Truck> driver3 = new Driver<Truck>("Абрамов Антон Сергеевич", true, 8, truck3);
-        Driver<Car> driver4 = new Driver<Car>("Мельников Леонид Николаевич", true, 8, car1);
+                8, truck1, "C");
+        Driver<Bus> driver2 = new Driver<Bus>("Ложкин Пётр Михайлович", true, 8, bus2, "D");
+        Driver<Truck> driver3 = new Driver<Truck>("Абрамов Антон Сергеевич", true, 8, truck3, "C");
+        Driver<Car> driver4 = new Driver<Car>("Мельников Леонид Николаевич", true, 8, car1, "B");
         car2.PrintType();
+        car1.passDiagnostics();
     }
 
 

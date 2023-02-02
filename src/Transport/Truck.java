@@ -18,6 +18,11 @@ public class Truck extends Auto<DriverC> {
     }
 
     @Override
+    public void passDiagnostics() {
+        System.out.println("Грузовику" + getBrand() +" " + getModel() + " Нужно пройти диагностику" );
+    }
+
+    @Override
     public void PrintType() {
         if (tonnage == null) {
             System.out.println("Данных по авто недостаточно");

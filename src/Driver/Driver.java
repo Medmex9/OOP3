@@ -6,17 +6,34 @@ public class Driver < A extends Auto> {
     String fullName;
     boolean driversLicense;
     int experience;
+    String category;
+
     A vehicle;
 
 
 
-    public Driver(String fullName, boolean driversLicense, int experience, A vehicle) {
+    public Driver(String fullName, boolean driversLicense, int experience, A vehicle, String category) {
         this.fullName = fullName;
         this.driversLicense = driversLicense;
         this.experience = experience;
         this.vehicle = vehicle;
+        this.category = category;
 
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) throws CheckingForExceptions {
+        if (category != null && !category.isEmpty()) {
+            this.category = category;
+        } else {
+            throw new CheckingForExceptions("Категория прав не указана или указана неверно");
+        }
+        }
+
+
 
     public A getVehicle() {
         return vehicle;

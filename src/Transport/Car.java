@@ -23,6 +23,10 @@ public class Car extends Auto<DriverB> implements Competing {
     }
 
 
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Автомобилю" + getBrand() + " " + getModel() + " Нужно пройти диагностику" );
+    }
 
     @Override
     public void PitStop() {System.out.println("Автомобиль  марки "+ getBrand() + " заехал на Пит стоп");

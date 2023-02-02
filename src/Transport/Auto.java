@@ -23,6 +23,12 @@ public abstract class Auto<C extends Driver> implements Competing {
         System.out.println( "Максимальная скорость ");
     }
 
+    public void passDiagnostics() {
+        System.out.println( "Нужна диагностика");
+    };
+
+
+
 
 
     public abstract void startMoving();

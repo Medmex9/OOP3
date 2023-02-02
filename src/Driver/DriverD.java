@@ -3,8 +3,8 @@ package Driver;
 import Transport.Bus;
 
 public class DriverD extends Driver<Bus> {
-    public DriverD(String fullName, boolean driversLicense, int experience, Bus vehicle) {
-        super(fullName, driversLicense, experience, vehicle);
+    public DriverD(String fullName, boolean driversLicense, int experience, Bus vehicle, String category) {
+        super(fullName, driversLicense, experience, vehicle,category);
     }
 
     @Override
