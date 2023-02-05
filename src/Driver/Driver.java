@@ -1,7 +1,7 @@
 package Driver;
 
 import Transport.Auto;
-import Transport.CheckingForExceptions;
+import Transport.ExceptionsToTheRules;
 
 public class Driver < A extends Auto> {
     String fullName;
@@ -26,18 +26,15 @@ public class Driver < A extends Auto> {
         return category;
     }
 
-    public void setCategory(DriverLicenseCategory category) throws CheckingForExceptions {
-        try {
-            setCategory(category);
-        } catch (DriverLicenseCategory) {
+    public void setCategory(DriverLicenseCategory category) throws ExceptionsToTheRules {
+
             if (category != null) {
                 this.category = category;
 
             } else {
-                System.out.println("Не указан тип водительского удостоверения");
+                throw  new ExceptionsToTheRules("Не указан тип водительского удостоверения" );
             }
         }
-    }
 
 
 
