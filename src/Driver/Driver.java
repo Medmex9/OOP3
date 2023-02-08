@@ -4,12 +4,12 @@ import Transport.Auto;
 import Transport.ExceptionsToTheRules;
 
 public class Driver < A extends Auto> {
-    String fullName;
-    boolean driversLicense;
-    int experience;
-    DriverLicenseCategory category;
+    protected String fullName;
+    protected boolean driversLicense;
+    protected int experience;
+    protected DriverLicenseCategory category;
 
-    A vehicle;
+    protected A vehicle;
 
 
 

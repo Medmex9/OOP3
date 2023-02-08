@@ -1,6 +1,9 @@
 import Driver.Driver;
 import Transport.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static Transport.Capacity.*;
 import static Transport.TypeOfBody.*;
 import static Driver.DriverLicenseCategory.*;
@@ -27,8 +30,59 @@ public class Main {
                 truck3, C);
         Driver<Car> driver4 = new Driver<Car>("Мельников Леонид Николаевич", true, 8,
                 car1, B);
+        Mechanics mexanics1 = new Mechanics("Иван", "Петров", "Рога и копыта",
+                car1, driver1);
+        Mechanics mexanics2 = new Mechanics("Пётр", "Васильевич", "ИП Молоток",car2,
+                driver2);
+        Mechanics mexanics3 = new Mechanics("Ленар", "Хусаинов", "ооо Омега",truck1,
+                driver3);
+        Mechanics mexanics4 = new Mechanics("Андрей", "Турбин", "ИП Канкор", bus3,
+                driver4);
         car2.PrintType();
         car1.passDiagnostics();
+
+// Авто что будут участвовать в гонке
+        List<Auto> list = new ArrayList<>();
+        list.add(car1);
+        list.add(car2);
+        list.add(car3);
+        list.add(truck1);
+        list.add(truck2);
+        list.add(truck3);
+        list.add(truck4);
+        list.add(bus1);
+        list.add(bus2);
+        list.add(bus3);
+        list.add(bus4);
+        System.out.print(list);
+
+        // Список механиков
+        List<Mechanics> mechanicsList= new ArrayList<>();
+        mechanicsList.add(mexanics1);
+        mechanicsList.add(mexanics2);
+        mechanicsList.add(mexanics3);
+        mechanicsList.add(mexanics4);
+        System.out.println(mechanicsList);
+        mexanics2.fixAuto();
+// ТО
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.AllAuto(car1); // Добавили машину
+        serviceStation.makeAService(); // Сделали ТО и далее
+        serviceStation.AllAuto(car2);
+        serviceStation.makeAService();
+
+        // Не могу понять как сделать метод с инфо о машине водителе и механике
+        // Механики и авто у меня экстендятся от одного класса. Ещё один класс я не могу ни там ни там добавить
+        // Пока вижу два решения проблемы 1. Объединить механиков и водителей в класс человек и через него уже
+        // Работать с классом авто, второй вариант добавить переменную водитель в класс мехников. Тогда при
+        // создании механика созу указываем не только машину, но и водителя. Но это не совсем логично
+        mexanics2.printInfo();
+
+
+
+
+
+
     }
 
 

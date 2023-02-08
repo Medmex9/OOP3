@@ -1,19 +1,22 @@
 package Transport;
 
 import Driver.Driver;
-import Transport.Competing;
+
+import java.util.List;
 
 public abstract class Auto<C extends Driver> implements Competing {
 
     private String brand;
     private String model;
     private double engineVolume;
+    private List<Mechanics<?>> mechanics; // Создан список механиков с помощью List в классе Transport.
 
     public Auto(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
     }
+
 
     public abstract void PitStop();
     public void BestLapTime() {
