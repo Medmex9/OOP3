@@ -9,7 +9,7 @@ public abstract class Auto<C extends Driver> implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
-    private List<Mechanics> mechanics;
+
 
 
     public Auto(String brand, String model, double engineVolume) {
@@ -17,12 +17,7 @@ public abstract class Auto<C extends Driver> implements Competing {
         this.model = model;
         this.engineVolume = engineVolume;
     }
-    public List<Mechanics> getMechanics() {
-        return mechanics;
 
-    }
-    public void  setMechanics(List<Mechanics>mechanics) { this.mechanics = mechanics;
-    }
     public abstract void PitStop();
     public void BestLapTime() {
         System.out.println("Лучшее время круга ");

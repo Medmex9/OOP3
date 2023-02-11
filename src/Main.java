@@ -2,7 +2,9 @@ import Driver.Driver;
 import Transport.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static Transport.Capacity.*;
 import static Transport.TypeOfBody.*;
@@ -57,12 +59,12 @@ public class Main {
         System.out.print(list);
 
         // Список механиков
-        List<Mechanics> mechanicsList= new ArrayList<>();
-        mechanicsList.add(mexanics1);
-        mechanicsList.add(mexanics2);
-        mechanicsList.add(mexanics3);
-        mechanicsList.add(mexanics4);
-        System.out.println(mechanicsList);
+        //List<Mechanics> mechanicsList= new ArrayList<>();
+        //mechanicsList.add(mexanics1);
+        //mechanicsList.add(mexanics2);
+        //mechanicsList.add(mexanics3);
+       // mechanicsList.add(mexanics4);
+        //System.out.println(mechanicsList);
         mexanics2.fixAuto();
 // ТО
         ServiceStation serviceStation = new ServiceStation();
@@ -70,13 +72,14 @@ public class Main {
         serviceStation.makeAService(); // Сделали ТО и далее
         serviceStation.AllAuto(car2);
         serviceStation.makeAService();
-
-        // Не могу понять как сделать метод с инфо о машине водителе и механике
-        // Механики и авто у меня экстендятся от одного класса. Ещё один класс я не могу ни там ни там добавить
-        // Пока вижу два решения проблемы 1. Объединить механиков и водителей в класс человек и через него уже
-        // Работать с классом авто, второй вариант добавить переменную водитель в класс мехников. Тогда при
-        // создании механика созу указываем не только машину, но и водителя. Но это не совсем логично
         mexanics2.printInfo();
+
+        Map<Auto, Mechanics> hashMechanics = new HashMap<Auto, Mechanics>();
+        hashMechanics.put(car1, mexanics1);
+        hashMechanics.put(car1, mexanics2);
+        hashMechanics.put(car3, mexanics3);
+        hashMechanics.put(car4, mexanics4);
+        System.out.println(hashMechanics);
 
 
 
