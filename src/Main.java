@@ -80,7 +80,8 @@ public class Main {
         hashMechanics.put(car3, mexanics3);
         hashMechanics.put(car4, mexanics4);
         System.out.println(hashMechanics);
-
+//Перепишите приложение: если в случае ошибки какой-либо
+// из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов.
 
 
 

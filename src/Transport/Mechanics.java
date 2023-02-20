@@ -1,6 +1,8 @@
 package Transport;
 import Driver.Driver;
 
+import java.util.*;
+
 public class Mechanics <D extends Driver> {
     private  String name;
     private String surname;
@@ -82,5 +84,19 @@ public class Mechanics <D extends Driver> {
     @Override
     public String toString() {
         return "Механик " + getName() + " " + getSurname() + " Из компании " + getMechanicsEmployer();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name,surname,mechanicsEmployer);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanics<?> mechanic = (Mechanics<?>) o;
+        return name.equals(mechanic.name) && surname.equals(mechanic.surname) &&
+                mechanicsEmployer.equals(mechanic.mechanicsEmployer);
     }
 }

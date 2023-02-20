@@ -2,13 +2,14 @@ package Transport;
 
 import Driver.Driver;
 
-import java.util.List;
+import java.util.*;
 
 public abstract class Auto<C extends Driver> implements Competing {
 
     private String brand;
     private String model;
     private double engineVolume;
+    public Map<Auto,Mechanics>MechanicsMap = new HashMap<>();
 
 
 
@@ -75,6 +76,20 @@ public abstract class Auto<C extends Driver> implements Competing {
     public String toString() {
         return "Автомобиль "  + brand +" " + model  +
                 " c объёмом двигателя " + engineVolume;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Auto auto = (Auto) o;
+        return Double.compare(auto.engineVolume,engineVolume) == 0 && brand.equals(auto.brand)
+                && model.equals(auto.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, engineVolume,model);
     }
 }
 
