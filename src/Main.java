@@ -2,9 +2,7 @@ import Driver.Driver;
 import Transport.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static Transport.Capacity.*;
 import static Transport.TypeOfBody.*;
@@ -58,14 +56,22 @@ public class Main {
         list.add(bus4);
         System.out.print(list);
 
-        // Список механиков
-        //List<Mechanics> mechanicsList= new ArrayList<>();
-        //mechanicsList.add(mexanics1);
-        //mechanicsList.add(mexanics2);
-        //mechanicsList.add(mexanics3);
-       // mechanicsList.add(mexanics4);
-        //System.out.println(mechanicsList);
-        mexanics2.fixAuto();
+        // Список водителей
+       Set<Driver> driverSet= new HashSet<>();
+        driverSet.add(driver1);
+        driverSet.add(driver2);
+        driverSet.add(driver3);
+        driverSet.add(driver4);
+        for(Driver driver : driverSet) {
+            System.out.println(driver);
+        }
+        Iterator<Driver> driverSetIterator = driverSet.iterator();
+        while (driverSetIterator.hasNext()) {
+            System.out.println(driverSetIterator.next());
+        }
+
+
+
 // ТО
         ServiceStation serviceStation = new ServiceStation();
         serviceStation.AllAuto(car1); // Добавили машину
@@ -80,12 +86,6 @@ public class Main {
         hashMechanics.put(car3, mexanics3);
         hashMechanics.put(car4, mexanics4);
         System.out.println(hashMechanics);
-//Перепишите приложение: если в случае ошибки какой-либо
-// из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов.
-
-
-
-
 
     }
 

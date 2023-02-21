@@ -42,4 +42,13 @@ public class Truck extends Auto<DriverC> {
     @Override
     public void stopMoving() {System.out.println("Грузовик марки "+ getBrand() + " закончил движение");
     }
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+}
 }

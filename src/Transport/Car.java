@@ -40,6 +40,15 @@ public class Car extends Auto<DriverB> implements Competing {
     public void stopMoving() {System.out.println("Автомобиль марки "+ getBrand() + " закончил движение");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
 
 

@@ -3,6 +3,8 @@ package Driver;
 import Transport.Auto;
 import Transport.ExceptionsToTheRules;
 
+import java.util.Objects;
+
 public class Driver < A extends Auto> {
     protected String fullName;
     protected boolean driversLicense;
@@ -100,11 +102,28 @@ public class Driver < A extends Auto> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return experience ==driver.experience && fullName.equals(driver.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, driversLicense, experience, vehicle, category );
+
+
+
+    }
+
+    @Override
     public String toString() {
         return "Driver{" +
                 "fullName='" + fullName + '\'' +
                 ", driversLicense=" + driversLicense +
                 ", experience=" + experience +
+                ", category=" + category +
                 ", vehicle=" + vehicle +
                 '}';
     }
