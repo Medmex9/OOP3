@@ -5,7 +5,6 @@ import Driver.Driver;
 import java.util.*;
 
 public abstract class Auto<C extends Driver> implements Competing {
-
     private String brand;
     private String model;
     private double engineVolume;
