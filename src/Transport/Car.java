@@ -1,10 +1,8 @@
 package Transport;
 import Driver.DriverB;
 
-import java.util.Objects;
-
 public class Car extends Auto<DriverB> implements Competing {
-    private static TypeOfBody typeOfBody;
+    private TypeOfBody typeOfBody;
     public Car(String brand, String model, int engineVolume, TypeOfBody typeOfBody ) {
         super(brand,model,engineVolume);
         this.typeOfBody = typeOfBody;
@@ -42,19 +40,6 @@ public class Car extends Auto<DriverB> implements Competing {
     public void stopMoving() {System.out.println("Автомобиль марки "+ getBrand() + " закончил движение");
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Car car = (Car)o;
-        return Objects.equals(typeOfBody, Car.typeOfBody);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), typeOfBody);
-    }
 }
 
 

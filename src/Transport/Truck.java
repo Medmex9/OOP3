@@ -2,10 +2,8 @@ package Transport;
 
 import Driver.DriverC;
 
-import java.util.Objects;
-
 public class Truck extends Auto<DriverC> {
-    public static Tonnage tonnage;
+    public Tonnage tonnage;
     public Truck(String brand, String model, double engineVolume, Tonnage tonnage) {
         super(brand, model, engineVolume);
         this.tonnage = tonnage;
@@ -44,17 +42,4 @@ public class Truck extends Auto<DriverC> {
     @Override
     public void stopMoving() {System.out.println("Грузовик марки "+ getBrand() + " закончил движение");
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Truck truck = (Truck) o;
-        return Objects.equals(tonnage, Truck.tonnage);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), tonnage);
-}
 }
